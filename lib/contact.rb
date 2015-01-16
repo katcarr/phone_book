@@ -6,6 +6,9 @@ class Contact
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
+    @name = @name.split('')
+    @name.at(0).upcase!()
+    @name = @name.join('')
     @number = attributes.fetch(:number)
   end
 
@@ -27,6 +30,14 @@ class Contact
         return contact
       end
     end
+  end
+
+  define_singleton_method(:all_contact_names) do
+    all_names = []
+    @@contacts.each do |contact|
+      all_names.push(contact.name())
+    end
+    all_names.sort()
   end
 
 end
