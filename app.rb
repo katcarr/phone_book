@@ -26,3 +26,13 @@ get('/contact/:contact') do
   @contact = Contact.search_contact(params.fetch('contact'))
   erb(:contact)
 end
+
+post('/contact_added') do
+  contact_name = params.fetch("contact_name")
+  number_to_add = params.fetch("number")
+  type_to_add = params.fetch("type")
+  phone_to_add = Phone.new({:number => number_to_add, :type => type_to_add})
+  @contact = Contact.search_contact(params.fetch('contact_name'))
+  @contact.add_phone(phone_to_add)
+  erb(:contact)
+end

@@ -7,4 +7,16 @@
   <br>
 <% end %>
 
+<h3>Add another number for this contact</h3>
+<form action="/contact_added" method="post">
+  <input id="contact_name" name="contact_name" type='hidden' value='<%= @contact.name() %>' >
+  
+  <label for="number">Number: </label>
+  <input id="number" name="number" type="text" placeholer="555-555-5555">
+
+  <label for="type">Type:</label>
+  <input for="type" name="type" type="text" placeholder="mobile">
+
+  <button type="submit">Add Number</button>
+
 <a href='/' class="btn btn-primary btn-lg active" role="button">Back to Contacts</a>
