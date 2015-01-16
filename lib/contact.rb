@@ -6,10 +6,12 @@ class Contact
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
-    @name = @name.split('')
-    @name.at(0).upcase!()
-    @name = @name.join('')
-    @phone = [attributes.fetch(:phone)]
+    if @name != ""
+      @name = @name.split('')
+      @name.at(0).upcase!()
+      @name = @name.join('')
+    end
+      @phone = [attributes.fetch(:phone)]
   end
 
   define_method(:add_phone) do |phone_to_add|

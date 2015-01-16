@@ -2,15 +2,17 @@
 
 
 <% @contact.phone().each do |phone_object| %>
-  <h3>Phone: <%= phone_object.number() %></h3>
-  <h3>Type: <%= phone_object.type() %></h3>
-  <br>
+  <% if phone_object.number != "" %>
+    <h3>Phone: <%= phone_object.number() %></h3>
+    <h3>Type: <%= phone_object.type() %></h3>
+    <br>
+  <% end %>
 <% end %>
 
 <h3>Add another number for this contact</h3>
 <form action="/contact_added" method="post">
   <input id="contact_name" name="contact_name" type='hidden' value='<%= @contact.name() %>' >
-  
+
   <label for="number">Number: </label>
   <input id="number" name="number" type="text" placeholer="555-555-5555">
 
