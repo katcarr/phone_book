@@ -9,7 +9,11 @@ class Contact
     @name = @name.split('')
     @name.at(0).upcase!()
     @name = @name.join('')
-    @phone = attributes.fetch(:phone)
+    @phone = [attributes.fetch(:phone)]
+  end
+
+  define_method(:add_phone) do |phone_to_add|
+    @phone.push(phone_to_add)
   end
 
   define_method(:save) do
