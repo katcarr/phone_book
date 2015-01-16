@@ -6,4 +6,5 @@ class Phone
     @number = attributes.fetch(:number)
     @type = attributes.fetch(:type)
   end
+
 end

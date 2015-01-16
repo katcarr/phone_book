@@ -1,6 +1,6 @@
 class Contact
 
-  attr_reader(:name, :number)
+  attr_reader(:name, :phone)
 
   @@contacts = []
 
@@ -9,7 +9,7 @@ class Contact
     @name = @name.split('')
     @name.at(0).upcase!()
     @name = @name.join('')
-    @number = attributes.fetch(:number)
+    @phone = attributes.fetch(:phone)
   end
 
   define_method(:save) do
