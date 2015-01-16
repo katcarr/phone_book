@@ -1,0 +1,10 @@
+<h2><%= @contact.name() %></h2>
+
+
+<% @contact.phone().each do |phone_object| %>
+  <h3>Phone: <%= phone_object.number() %></h3>
+  <h3>Type: <%= phone_object.type() %></h3>
+  <br>
+<% end %>
+
+<a href='/' class="btn btn-primary btn-lg active" role="button">Back to Contacts</a>

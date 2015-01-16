@@ -10,7 +10,7 @@ get('/') do
   erb(:index)
 end
 
-post('/contact') do
+post('/contacts') do
   name_to_add = params.fetch("name")
   number_to_add = params.fetch("number")
   type_to_add = params.fetch("type")
@@ -20,4 +20,9 @@ post('/contact') do
   @contacts_names = Contact.all_contact_names()
   @contacts = Contact.all()
   erb(:index)
+end
+
+get('/contact/:contact') do
+  @contact = Contact.search_contact(params.fetch('contact'))
+  erb(:contact)
 end
