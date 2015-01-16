@@ -1,0 +1,23 @@
+<h1>Your Contacts</h1>
+
+<h2>Please Enter A Contacts Below</h2>
+<form action="/contact" method="post">
+  <label for="name">Name:</label>
+  <input id="name" name="name" type='text'>
+
+  <label for="number">Number:</label>
+  <input id="number" name="number" type="text" placeholder= "555-555-5555">
+
+  <label for="type">Type:</label>
+  <input id="type" name="type" type="text" placeholder="mobile">
+
+  <button type="submit">Add Contact</button>
+
+</form>
+
+<h3>Your Contacts</h3>
+<ul>
+  <% @contacts_names.each() do |name|%>
+    <li><%= name %></li>
+  <% end %>
+</ul>
