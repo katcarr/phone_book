@@ -1,4 +1,4 @@
-<h1>Your Contacts</h1>
+<h1>Welcome to The Contact App</h1>
 
 <h2>Please Enter A Contacts Below</h2>
 <form action="/contacts" method="post">
@@ -15,11 +15,11 @@
 
 </form>
 
-<h3>Your Contacts</h3>
+<h2>Your Contacts</h2>
 <ul>
   <% @contacts_names.each() do |name|%>
     <% if name != '' %>
-      <li><a href="/contact/<%= name %>" ><%= name%></a></li>
+      <h3><li><a href="/contact/<%= name %>" ><%= name%></a></li></h3>
     <% end %>
   <% end %>
 </ul>

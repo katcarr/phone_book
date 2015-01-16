@@ -1,12 +1,14 @@
-<h2><%= @contact.name() %></h2>
+<h1 style="color:#DC3D24"><%= @contact.name() %></h1>
 
 
 <% @contact.phone().each do |phone_object| %>
+<ul class="list-unstyled">
   <% if phone_object.number != "" %>
-    <h3>Phone: <%= phone_object.number() %></h3>
-    <h3>Type: <%= phone_object.type() %></h3>
+    <h3><%= phone_object.type().upcase() %></lh>
+    <li><h4><%= phone_object.number() %></h4></li>
     <br>
   <% end %>
+</ul>
 <% end %>
 
 <h3>Add another number for this contact</h3>
@@ -20,5 +22,5 @@
   <input for="type" name="type" type="text" placeholder="mobile">
 
   <button type="submit">Add Number</button>
-
+</form>
 <a href='/' class="btn btn-primary btn-lg active" role="button">Back to Contacts</a>
